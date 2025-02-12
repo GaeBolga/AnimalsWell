@@ -37,3 +37,9 @@ body {
 .center-text {
   text-align: center;
 }
+
+.background {
+  background-image: url("./src/assets/images/backgroundAnimals.jpg");
+  background-size: cover;
+  align-content: start;
+}
