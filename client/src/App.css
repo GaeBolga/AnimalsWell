@@ -14,15 +14,6 @@ body {
   margin: 0;
 }
 
-#root {
-  height: 120vh;
-  background-image: url("./assets/images/backgroundAnimals.jpg");
-  background-size: cover;
-  background-position: top;
-  align-content: start;
-  padding: 1rem;
-}
-
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -45,4 +36,10 @@ body {
 
 .center-text {
   text-align: center;
+}
+
+.background {
+  background-image: url("./src/assets/images/backgroundAnimals.jpg");
+  background-size: cover;
+  align-content: start;
 }

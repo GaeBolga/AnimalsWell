@@ -2,7 +2,7 @@ import "./Home.css";
 
 function Home() {
   return (
-    <main className="home-container">
+    <main className="home-container ">
       <section className="home-section-container home-flex">
         <figcaption>
           <img
