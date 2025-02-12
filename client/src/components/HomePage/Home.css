@@ -1,12 +1,18 @@
 .home-container {
-  margin-top: 6vh;
+  margin-top: 2vh;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   gap: 5vh;
+
+  background-image: url("./src/assets/images/backgroundAnimals.jpg");
+  background-size: cover;
+  background-position: sticky;
+  align-content: start;
 }
 
 .home-section-container {
+  margin-top: 6vh;
   display: flex;
   justify-content: space-between;
 }
