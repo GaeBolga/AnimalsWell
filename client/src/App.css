@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +15,7 @@ body {
 }
 
 #root {
-  height: 100vh;
+  height: 120vh;
   background-image: url("./assets/images/backgroundAnimals.jpg");
   background-size: cover;
   background-position: top;
@@ -34,4 +36,13 @@ body {
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+.black-text {
+  color: black;
+  font-family: "Ubuntu", serif;
+}
+
+.center-text {
+  text-align: center;
 }

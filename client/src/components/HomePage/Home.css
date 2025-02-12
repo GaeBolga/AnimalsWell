@@ -1,0 +1,39 @@
+.home-container {
+  margin-top: 6vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.home-section-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-flex {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5%;
+}
+
+.mascotte {
+  height: 40vh;
+  width: auto;
+  margin-top: 5vh;
+}
+
+.bloc-text-home {
+  background-color: rgba(224, 215, 179, 0.8);
+  border-radius: 18px;
+  width: 75vh;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+}
+
+.p-home {
+  font-size: 20px;
+  font-weight: 500;
+}
