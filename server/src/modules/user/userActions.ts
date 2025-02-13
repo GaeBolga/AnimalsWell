@@ -14,8 +14,21 @@ const inscription: RequestHandler = async (req, res) => {
         .json({ user, message: "Utilisateur inscrit avec succès" });
     }
   } catch (err) {
-    res.status(500).json({ err, message: "erreur lors de l'inscription" });
+    res.status(500);
   }
 };
+const connexion: RequestHandler = async (req, res) => {
+  try {
+    const { pseudo, mdp } = req.body;
+    const user = await userRepository.connexion(pseudo, mdp);
 
-export default { inscription };
+    if (!user) {
+      res.status(401).json({ message: "Identifiants incorrects" });
+    }
+
+    res.status(200).json({ user, message: "Utilisateur connecté avec succès" });
+  } catch (err) {
+    res.status(500).json({ err, message: "Erreur lors de la connexion" });
+  }
+};
+export default { inscription, connexion };

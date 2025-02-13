@@ -1,7 +1,12 @@
 import { useState } from "react";
 import "./Inscription.css";
+import { useNavigate } from "react-router-dom";
+import useToast from "../useToast";
 
 function inscription() {
+  const navigate = useNavigate();
+  const { success, failed } = useToast();
+
   const [formData, setFormData] = useState({
     pseudo: "",
     mail: "",
@@ -27,12 +32,13 @@ function inscription() {
         },
       );
       if (response.ok) {
-        alert("bonjour");
+        success("bonjour");
+        navigate("/");
       } else {
-        alert("Échec de la validation. Veuillez réessayer.");
+        failed("Échec de la validation. Veuillez réessayer.");
       }
     } catch (error) {
-      alert("Une erreur est survenue.");
+      failed("Une erreur est survenue.");
     }
   }
 

@@ -15,7 +15,7 @@ router.get("/api/items", itemActions.browse);
 router.get("/api/items/:id", itemActions.read);
 router.post("/api/items", itemActions.add);
 router.post("/user/inscription", userActions.inscription);
-
+router.post("/user/connexion", userActions.connexion);
 /* ************************************************************************* */
 
 export default router;

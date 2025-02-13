@@ -21,6 +21,7 @@
   margin-bottom: 3vh;
   font-size: 20px;
   height: 33px;
+  cursor: pointer;
 }
 .react-link {
   text-decoration: none;
