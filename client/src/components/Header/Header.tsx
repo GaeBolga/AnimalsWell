@@ -1,22 +1,24 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUser } from "../../context/UserContext";
 import useToast from "../useToast";
 
 function Header() {
-  const { setUser } = useUser();
+  const { user, setUser } = useUser();
 
   const [formData, setFormData] = useState({
     pseudo: "",
     mdp: "",
   });
-
   const { success, failed } = useToast();
-
   const navigate = useNavigate();
   const [isConnected, setIsConnected] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    if (!user) navigate("/");
+  }, [navigate, user]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -54,7 +56,6 @@ function Header() {
           pseudo: data.user.pseudo,
           id: data.user.id,
         });
-
         setIsOpen(!isOpen);
       }
     } catch (error) {
@@ -63,7 +64,7 @@ function Header() {
   }
 
   return (
-    <main className="header-container ">
+    <main className="header-container">
       <button
         className="connexion-button"
         type="button"
@@ -75,6 +76,7 @@ function Header() {
           alt="logo patte de chat"
         />
       </button>
+
       {isConnected ? (
         <div>
           <p className="black-text">Bienvenue !</p>
@@ -82,24 +84,27 @@ function Header() {
             carnet
           </Link>
         </div>
-      ) : (
+      ) : isOpen ? (
         <div className="link-container">
           <Link className="black-text react-link" to="/inscription">
             inscription
           </Link>
           <button
-            className="black-text connexion-button "
+            className="black-text connexion-button"
             type="button"
             onClick={() => setIsOpen(!isOpen)}
           >
             connexion
           </button>
         </div>
-      )}
-      {isOpen && (
+      ) : (
         <div>
           <h1>Inscription</h1>
-          <button type="button" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="close-button-header"
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             X
           </button>
           <form action="submit" onSubmit={handleSubmit}>
@@ -112,16 +117,16 @@ function Header() {
                   value={formData.pseudo}
                   onChange={handleChange}
                 />
-              </label>{" "}
+              </label>
               <label>
                 mot-de-passe
                 <input
-                  type="text"
+                  type="password"
                   name="mdp"
                   value={formData.mdp}
                   onChange={handleChange}
                 />
-              </label>{" "}
+              </label>
               <button type="submit">Envoyer</button>
             </section>
           </form>

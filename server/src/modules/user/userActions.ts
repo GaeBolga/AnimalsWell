@@ -14,7 +14,7 @@ const inscription: RequestHandler = async (req, res) => {
         .json({ user, message: "Utilisateur inscrit avec succès" });
     }
   } catch (err) {
-    res.status(500);
+    res.status(500).json({ err, message: "une erreur est subvenue." });
   }
 };
 const connexion: RequestHandler = async (req, res) => {

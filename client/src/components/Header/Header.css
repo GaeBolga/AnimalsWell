@@ -26,3 +26,12 @@
 .react-link {
   text-decoration: none;
 }
+
+.close-button-header {
+  display: flex;
+  height: 30px;
+  width: 24px;
+  padding: 5px;
+  margin-left: 95%;
+  margin-bottom: 5px;
+}

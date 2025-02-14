@@ -52,38 +52,45 @@ function inscription() {
   };
 
   return (
-    <main className="background inscription-container">
+    <main className="background  carnet-container">
       <h1>Inscription</h1>
       <form action="submit" onSubmit={handleSubmit}>
-        <section>
-          <label>
-            Pseudo
-            <input
-              type="text"
-              name="pseudo"
-              value={formData.pseudo}
-              onChange={handleChange}
-            />
-          </label>{" "}
-          <label>
-            mail
-            <input
-              type="text"
-              name="mail"
-              value={formData.mail}
-              onChange={handleChange}
-            />
-          </label>{" "}
-          <label>
-            mot-de-passe
-            <input
-              type="text"
-              name="mdp"
-              value={formData.mdp}
-              onChange={handleChange}
-            />
-          </label>{" "}
-          <button type="submit">Envoyer</button>
+        <section className="inscription-form first-input">
+          <div>
+            <label>
+              Pseudo
+              <input
+                className="input-style"
+                type="text"
+                name="pseudo"
+                value={formData.pseudo}
+                onChange={handleChange}
+              />
+            </label>{" "}
+            <label>
+              mail
+              <input
+                className="input-style"
+                type="text"
+                name="mail"
+                value={formData.mail}
+                onChange={handleChange}
+              />
+            </label>{" "}
+          </div>
+          <div>
+            <label>
+              mot-de-passe
+              <input
+                className="input-style"
+                type="text"
+                name="mdp"
+                value={formData.mdp}
+                onChange={handleChange}
+              />
+            </label>{" "}
+            <button type="submit">Envoyer</button>
+          </div>
         </section>
       </form>
     </main>
