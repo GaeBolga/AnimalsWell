@@ -1,0 +1,79 @@
+.carnet-container {
+  background-image: url("./src/assets/images/backgroundAnimals.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.new-animal {
+  background-color: rgb(240, 145, 145);
+  border-radius: 8px;
+  height: 5vh;
+  width: auto;
+  padding: 7px;
+  margin: 2% 0% 2% 85%;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 100%;
+  margin-top: 8vh;
+}
+
+.card {
+  background-color: rgb(240, 145, 145);
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  height: 52vh;
+  width: 20vw;
+  border-radius: 28px;
+}
+
+.first-part {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+  height: 50%;
+  padding: 2%;
+}
+
+.close-button {
+  height: 11%;
+  width: 5%;
+}
+
+.animal-image {
+  background-color: hsl(60, 56%, 91%, 0.3);
+  border-radius: 8px;
+  width: 60%;
+}
+
+.presentation-container {
+  width: 30%;
+  padding-left: 3%;
+}
+.second-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 30%;
+}
+.vaccination-container {
+  background-color: beige;
+  width: 42%;
+  border-radius: 8px;
+  padding: 3%;
+}
+
+.commentaire-container {
+  background-color: beige;
+  width: 45%;
+  border-radius: 8px;
+  text-align: center;
+  padding: 3%;
+}
